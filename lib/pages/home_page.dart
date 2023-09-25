@@ -31,7 +31,6 @@ class _HomePageState extends State<HomePage> {
                 },
                 children: const [
                   CalculadoraPage(),
-                  HistoricoPage(),
                 ],
               ),
             ),
@@ -39,7 +38,12 @@ class _HomePageState extends State<HomePage> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           onTap: (value) {
-                  controller.jumpToPage(value);
+                  if(value == 1){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HistoricoPage()));
+                  }
                 },
                 currentIndex: posicaoPagina,
                 items: const [
